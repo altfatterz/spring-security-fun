@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.spring.security.preauthorize</groupId>
-    <artifactId>spring-security-preauthorize</artifactId>
+    <artifactId>spring-security-fun</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
