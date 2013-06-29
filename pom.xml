@@ -14,6 +14,7 @@
         <junit.version>4.11</junit.version>
         <slf4j.version>1.7.5</slf4j.version>
         <cglib.version>2.2</cglib.version>
+        <aspectj.version>1.7.2</aspectj.version>
     </properties>
 
     <dependencies>
@@ -25,6 +26,12 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <!-- in case we use aspectj for proxy creation -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-aspects</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
 
@@ -61,11 +68,23 @@
             <version>${spring.framework.version}</version>
         </dependency>
 
-        <!-- -->
+        <!-- cglib needed for class based proxy (proxy-target-class="true") -->
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>${cglib.version}</version>
+        </dependency>
+
+        <!-- aspectj need for aspectj based proxy (mode="aspectj") -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
 
         <!-- logging -->

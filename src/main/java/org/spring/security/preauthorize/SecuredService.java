@@ -7,4 +7,5 @@ public interface SecuredService {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     void securedMethod();
 
+
 }
