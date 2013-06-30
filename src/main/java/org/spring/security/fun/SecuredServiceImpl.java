@@ -1,5 +1,8 @@
 package org.spring.security.fun;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spring.security.fun.items.Page;
@@ -39,6 +42,23 @@ public class SecuredServiceImpl implements SecuredService {
         page.setId(id);
         page.setName("myPage");
         return page;
+    }
+
+    @Override
+    public List<Item> getItems() {
+        // according to the sql/insert-acl-schema.sql there is read access for admin for widget(id=3)
+        // through inheritence, however for widget(id=4) there is no read access for admin
+
+        List<Item> items = new ArrayList<Item>();
+        Widget widget = new Widget();
+        widget.setId(3L);
+        items.add(widget);
+
+        widget = new Widget();
+        widget.setId(4L);
+        items.add(widget);
+
+        return items;
     }
 
 }

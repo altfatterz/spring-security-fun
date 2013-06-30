@@ -1,8 +1,14 @@
 package org.spring.security.fun;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.spring.security.fun.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -71,6 +77,15 @@ public class SecuredServiceImplTest {
         securedService.getPage(1L);
     }
 
+    @Test
+    public void filterItemsAsAdmin() {
+        Authentication admin = new UsernamePasswordAuthenticationToken("admin", "admin", AuthorityUtils.NO_AUTHORITIES);
+        SecurityContextHolder.getContext().setAuthentication(admin);
+
+        List<Item> items = securedService.getItems();
+        assertThat(items.size(), is(1));
+        assertThat(items.get(0).getId(), is(3L));
+    }
 
     @After
     public void tearDown() {
