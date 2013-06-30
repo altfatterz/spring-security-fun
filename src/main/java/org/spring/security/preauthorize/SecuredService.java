@@ -15,4 +15,7 @@ public interface SecuredService {
     @PostAuthorize("hasPermission(returnObject, 'READ')")
     Item getPageItem(Long id);
 
+    @PostAuthorize("hasPermission(returnObject, 'WRITE')")
+    Item getPage(Long id);
+
 }

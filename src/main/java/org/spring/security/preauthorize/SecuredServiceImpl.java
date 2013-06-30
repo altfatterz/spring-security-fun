@@ -33,4 +33,12 @@ public class SecuredServiceImpl implements SecuredService {
         return widget;
     }
 
+    @Override
+    public Item getPage(Long id) {
+        Page page = new Page();
+        page.setId(id);
+        page.setName("myPage");
+        return page;
+    }
+
 }
