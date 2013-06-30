@@ -69,7 +69,7 @@ public class SecuredServiceImplTest {
     public void writePermissionForUserWithoutGrantingACE() {
         Authentication user = new UsernamePasswordAuthenticationToken("user", "user", AuthorityUtils.NO_AUTHORITIES);
         SecurityContextHolder.getContext().setAuthentication(user);
-        // user has a acl entry for Page object with id 1, but the granting flag of acl entry is set to false)
+        // user has an acl entry for Page object with id 1, but the granting flag of acl entry is set to false)
         securedService.getPage(1L);
     }
 
