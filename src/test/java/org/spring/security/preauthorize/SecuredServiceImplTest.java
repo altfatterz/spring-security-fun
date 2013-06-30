@@ -55,13 +55,13 @@ public class SecuredServiceImplTest {
     }
 
     @Test
-    @Ignore
     public void itemReadHierarchyPermissionForAdmin() {
         Authentication admin = new UsernamePasswordAuthenticationToken("admin", "admin", AuthorityUtils.NO_AUTHORITIES);
         SecurityContextHolder.getContext().setAuthentication(admin);
-        // admin has read access indirectly to a Widget domain object with id 3 because
-        // that widget is in a parent-child relationship with a Page domain object with id 1 to which
-        // admin has direct read access
+        // admin has read access indirectly to a Widget domain object with id 3 (without having an acl entry)
+        // because that widget is in a parent-child relationship (through Container with id 2)
+        // with a Page domain object with id 1 to which admin has direct read access (having an acl entry)
+        // and the inherit flag is set to true on Widget(id=3) and Container(id=2)
         securedService.getPageItem(3L);
     }
 

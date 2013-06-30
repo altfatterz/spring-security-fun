@@ -12,7 +12,7 @@ INSERT INTO acl_object_identity
 (id, object_id_class, object_id_identity, parent_object, owner_sid, entries_inheriting) VALUES
 (1, 1, 1, NULL, 1, 1),
 (2, 2, 2, 1, 1, 1),
-(3, 3, 3, 2, 1, 0),
+(3, 3, 3, 2, 1, 1),
 (4, 3, 4, 2, 1, 0);
 
 INSERT INTO acl_entry
