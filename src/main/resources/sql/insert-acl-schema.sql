@@ -3,9 +3,9 @@ INSERT INTO acl_sid (id, principal, sid) VALUES
 (2, 1, 'user');
 
 INSERT INTO acl_class (id, class) VALUES
-(1, 'org.spring.security.preauthorize.items.Page'),
-(2, 'org.spring.security.preauthorize.items.Container'),
-(3, 'org.spring.security.preauthorize.items.Widget');
+(1, 'org.spring.security.fun.items.Page'),
+(2, 'org.spring.security.fun.items.Container'),
+(3, 'org.spring.security.fun.items.Widget');
 
 -- one page with one container and two widgets
 INSERT INTO acl_object_identity

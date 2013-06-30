@@ -1,6 +1,6 @@
-package org.spring.security.preauthorize;
+package org.spring.security.fun;
 
-import org.spring.security.preauthorize.items.Item;
+import org.spring.security.fun.items.Item;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 

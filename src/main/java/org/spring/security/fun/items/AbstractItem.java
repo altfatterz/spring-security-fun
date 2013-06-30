@@ -1,4 +1,4 @@
-package org.spring.security.preauthorize.items;
+package org.spring.security.fun.items;
 
 public abstract class AbstractItem implements Item {
 

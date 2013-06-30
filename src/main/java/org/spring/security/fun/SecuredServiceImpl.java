@@ -1,10 +1,10 @@
-package org.spring.security.preauthorize;
+package org.spring.security.fun;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.spring.security.preauthorize.items.Item;
-import org.spring.security.preauthorize.items.Page;
-import org.spring.security.preauthorize.items.Widget;
+import org.spring.security.fun.items.Page;
+import org.spring.security.fun.items.Widget;
+import org.spring.security.fun.items.Item;
 import org.springframework.stereotype.Service;
 
 @Service

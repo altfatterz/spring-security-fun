@@ -1,4 +1,4 @@
-package org.spring.security.preauthorize;
+package org.spring.security.fun;
 
 import static junit.framework.Assert.assertEquals;
 
